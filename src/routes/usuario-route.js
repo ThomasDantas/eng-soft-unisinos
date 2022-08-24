@@ -7,15 +7,8 @@ import { criar, editar } from "../controllers/usuario-controller.js";
 import { authorize } from "../services/auth-service.js";
 
 
-router.post(
-  "/",
-  criar
-);
+router.post("", criar);
 
-router.put(
-  "/",
-  authorize,
-  editar
-);
+router.put("", authorize, editar);
 
 export default router;

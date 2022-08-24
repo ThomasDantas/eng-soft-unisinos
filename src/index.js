@@ -13,7 +13,6 @@ app.use(urlencoded({ limit: '1gb', extended: true }))
 app.use(json({ limit: '1gb' }))
 app.disable('x-powered-by')
 
-
 // =============== Globais
 global.SALT_KEY = process.env.SECRET
 
@@ -30,19 +29,15 @@ app.use('/usuario', usuarioRoute)
 
 // =============== Conexao banco Oracle
 const connectionDb = () => {
-  const config = {
-    host: process.env.HOST,
-    user: process.env.USER,
-    password: process.env.PASSWORD,
-    database: process.env.DATABASE,
-    port: '5432',
-    ssl: {
-      rejectUnauthorized: false,
-    },
-  };
   const knex = Knex({
     client: 'pg',
-    connection: config,
+    connection: {
+      host: process.env.HOST,
+      user: process.env.DATABASE,
+      password: process.env.PASSWORD,
+      database: process.env.DATABASE,
+      port: 5432,
+    },
     debug: false,
   });
   return knex

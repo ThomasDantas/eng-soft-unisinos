@@ -1,0 +1,9 @@
+#START
+PORT=xxx
+SECRET=xxx
+
+#DATABAE
+HOST=xxx
+USER=xxx
+PASSWORD=xxx
+DATABASE=xxx

@@ -1,6 +1,7 @@
 'use strict'
 
-import { sign, verify } from 'jsonwebtoken'
+import pkg from 'jsonwebtoken';
+const { sign, verify } = pkg;
 
 export async function generateToken(data) {
   return sign(data, global.SALT_KEY)

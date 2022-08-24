@@ -1,10 +1,10 @@
 "use strict";
 
-import { Router } from "express";
-const router = Router();
+import express from 'express';
+const router = express.Router();
 
 import { criar, editar } from "../controllers/usuario-controller.js";
-import { authorize } from "../services/auth-service";
+import { authorize } from "../services/auth-service.js";
 
 
 router.post(

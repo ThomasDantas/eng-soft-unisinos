@@ -1,8 +1,7 @@
 'use strict'
 
-import { generateToken } from '../services/auth-service'
-import { criarUsuario } from '../model/usuario-model'
-import utils from '../services/index'
+import { generateToken } from '../services/auth-service.js'
+import { criarUsuario } from '../model/usuario-model.js'
 
 export async function criar(req, res, next) {
   try {

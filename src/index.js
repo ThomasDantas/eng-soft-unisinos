@@ -4,7 +4,7 @@ import express, { urlencoded, json } from 'express'
 import cors from 'cors'
 import 'dotenv/config'
 
-import usuarioRoute from './routes/usuario-route'
+import usuarioRoute from './routes/usuario-route.js'
 
 const app = express()
 app.use(cors({ origin: true }))

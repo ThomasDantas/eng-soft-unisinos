@@ -1,10 +1,10 @@
 "use strict";
 
-const conn = require("../index");
+import { knex } from "../index.js";
 
 export const criarUsuario = async (data) => {
   try {
-    return conn.knex
+    return knex
   } catch (error) {
     throw new Error(error)
   }

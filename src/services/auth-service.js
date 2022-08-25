@@ -35,7 +35,7 @@ export async function authorize (req, res, next) {
         message: 'Token Inválido'
       })
     } else {
-      res.locals.idUsuario = decoded
+      res.locals.idUsuario = Number(decoded.id)
       next()
     }
   })

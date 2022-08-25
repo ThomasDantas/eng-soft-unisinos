@@ -3,12 +3,16 @@
 import express from 'express';
 const router = express.Router();
 
-import { criar, editar } from "../controllers/usuario-controller.js";
+import { criar, login, editar, deletar} from "../controllers/usuario-controller.js";
 import { authorize } from "../services/auth-service.js";
 
 
 router.post("", criar);
 
+router.post("/login", login);
+
 router.put("", authorize, editar);
+
+router.delete("", authorize, deletar);
 
 export default router;

@@ -25,7 +25,7 @@ server.timeout = 3600000
 server.listen(port)
 
 // =============== Carrega as Rotas
-app.use('/usuario', usuarioRoute)
+app.use('/usuarios', usuarioRoute)
 
 // =============== Conexao banco Oracle
 const connectionDb = () => {

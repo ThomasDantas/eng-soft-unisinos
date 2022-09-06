@@ -1,4 +1,3 @@
-import Knex from 'knex'
 import { createServer } from 'http'
 import express, { urlencoded, json } from 'express'
 import cors from 'cors'
@@ -27,20 +26,4 @@ server.listen(port)
 // =============== Carrega as Rotas
 app.use('/usuarios', usuarioRoute)
 
-// =============== Conexao banco Oracle
-const connectionDb = () => {
-  const knex = Knex({
-    client: 'pg',
-    connection: {
-      host: process.env.HOST,
-      user: process.env.DATABASE,
-      password: process.env.PASSWORD,
-      database: process.env.DATABASE,
-      port: 5432,
-    },
-    debug: false,
-  });
-  return knex
-}
-export const knex = connectionDb()
 console.log(`========RUNNING PROD - at port ${port}========`)

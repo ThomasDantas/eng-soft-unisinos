@@ -92,4 +92,13 @@ export class PgUsuarioRepositorio extends PgRepositorio {
       return { error }
     }
   }
+  buscarEntidades = async (data) => {
+    try {
+      const { rows } = await this.perform(
+        `SELECT id, nome, objetivos, logradouro, email, telefone, numero, municipio, uf FROM public."entidadessociais" WHERE id_usuario = :idUsuario`, data)
+      return rows.map(el => ({ ...el, id: Number(el.id), numero: Number(el.numero) }))
+    } catch (error) {
+      return { error }
+    }
+  };
 }

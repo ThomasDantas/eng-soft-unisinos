@@ -4,6 +4,7 @@ import cors from 'cors'
 import 'dotenv/config'
 
 import usuarioRoute from './routes/usuario-route.js'
+import entidadesRoute from './routes/entidades-route.js'
 
 const app = express()
 app.use(cors({ origin: true }))
@@ -25,5 +26,6 @@ server.listen(port)
 
 // =============== Carrega as Rotas
 app.use('/usuarios', usuarioRoute)
+app.use('/entidades', entidadesRoute)
 
 console.log(`========RUNNING PROD - at port ${port}========`)

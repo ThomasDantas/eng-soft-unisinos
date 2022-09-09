@@ -107,3 +107,17 @@ export async function deletar(req, res, next) {
     })
   }
 }
+
+export async function entidades(req, res, next) {
+  const Pg = new PgUsuarioRepositorio()
+  try {
+    const { idUsuario } = res.locals
+    const entidades = await Pg.buscarEntidades({ idUsuario })
+    return res.status(200).send(entidades)
+  } catch (e) {
+    console.log(e)
+    return res.status(500).send({
+      message: 'Falha ao processar sua requisição'
+    })
+  }
+}
